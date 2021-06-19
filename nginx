@@ -39,7 +39,7 @@ mysql -u root -p
 
 Check Database
 
-SHOW DATABASES
+SHOW DATABASES;
 
 Create Database 
 
