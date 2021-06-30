@@ -29,9 +29,18 @@ PHP & mysql install
 
 sudo apt install php-cli php-fpm php-mbstring php-curl php-xml php-zip php-mysql
 
+Fpm install
+
+sudo apt install php-fpm
+
 Mysql server install
 
 sudo apt install mysql-server
+
+Create Symbolic link
+
+sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin //  Jodi lage 
+
 
 Mysql access
 
@@ -64,9 +73,9 @@ sudo nano /etc/nginx/sites-available/default
 server {
 	listen 80 default_server;
 	listen [::]:80 default_server;
-	location /phpmyadmin {
-            index index.php;
-    	}
+	#location /phpmyadmin {
+            #index index.php;
+    	#}
 
 	root /var/www/html/public;
 
@@ -83,7 +92,7 @@ server {
 	location ~ \.php$ {
 		include snippets/fastcgi-php.conf;
 	
-		fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
+		fastcgi_pass unix:/run/php/php7.4-fpm.sock;
 	}
 }
 
