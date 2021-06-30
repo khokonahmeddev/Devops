@@ -37,6 +37,10 @@ Mysql server install
 
 sudo apt install mysql-server
 
+PHPMYADMIN Install
+
+sudo apt install phpmyadmin
+
 Create Symbolic link
 
 sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin //  Jodi lage 
@@ -113,6 +117,16 @@ Server restart
 
 sudo service nginx restart
 sudo service nginx reload
+
+
+// Folder Permission 
+
+sudo chmod -R 777 foldername
+
+// Laravel Project Install
+
+1=> Composer install
+2 => l;aravel project downoload url
 
 
 Install Webmin
