@@ -1,5 +1,9 @@
 # UFW Configuration
 
+###### SSH Allow
+
+`sudo ufw allow ssh`
+
 ##### Enable UFW:
 
 `sudo ufw enable`
