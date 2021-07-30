@@ -6,9 +6,11 @@ ssh root@remote_Ip
 
 Create a new user
 
+adduser remote-user
+
 usermod -aG sudo remote-user
 
-Logout
+User Logout
 
 logout
 
@@ -26,6 +28,8 @@ sudo apt install zip unzip
 PHP & PHPmyadmin Install
 
 PHP & mysql install
+
+sudo apt install php7.4-cli php7.4-fpm php7.4-mbstring php7.4-curl php7.4-xml php7.4-zip php7.4-mysql
 
 sudo apt install php-cli php-fpm php-mbstring php-curl php-xml php-zip php-mysql
 
@@ -131,15 +135,15 @@ sudo chmod -R 777 foldername
 
 Install Webmin
 
-Add Webmin repo to apt source list
+#Add Webmin repo to apt source list
 
-git remote add origin git@github.com:khokonahmeddev/Devops.git
+sudo nano /etc/apt/sources.list
 
-then add the following line at the end of the file:
+#then add the following line at the end of the file:
 
 deb http://download.webmin.com/download/repository sarge contrib
 
-Add Webmin’s PGP key:
+#Add Webmin’s PGP key:
 
 sudo wget -qO- http://www.webmin.com/jcameron-key.asc | sudo apt-key add
 
@@ -152,4 +156,122 @@ sudo apt install webmin
 sudo apt install libsocket6-perl libwww-perl (For some features to work properly)
 
 Visit https://remote_IP:10000 to access Webmin
+
+
+
+
+// Apache Setup
+
+# Install Apache
+
+sudo apt install apache2
+
+# Setup Firewall
+
+sudo ufw app list
+
+# Now we will enable Apache Full
+
+sudo ufw allow 'Apache Full'
+
+# With this command you can view the status of UFW
+
+sudo ufw status
+
+# If Activate UFW
+
+sudo ufw enable
+
+# Check Apache Installation
+
+sudo systemctl status apache2
+
+#  Installing MySQL
+
+sudo apt install mysql-server
+
+# Installing PHP with Commonly Used Extensions
+ 
+ sudo apt-get install php libapache2-mod-php php-mysql php-curl php-gd php-json php-zip
+
+# Installing phpMyAdmin
+
+ sudo apt install phpmyadmin 
+
+# Enable Apache Rewrite Module
+
+sudo a2enmod rewrite
+
+# Now restart Apache so that this change becomes live
+
+sudo service apache2 restart
+
+# If that's not working for you, you need to include PHPMyAdmin inside apache configuration. Open apache.conf using your favorite editor, mine is nano
+
+sudo nano /etc/apache2/apache2.conf
+
+# phpmyadmin after install on Apache, Ubuntu
+
+Include /etc/phpmyadmin/apache.conf
+
+
+How To Set Up Apache Virtual Hosts on Ubuntu
+
+
+#  Create the Directory Structure
+
+  sudo mkdir -p /var/www/yourdomin.com/html
+
+# Grant Permissions
+
+sudo chown -R $USER:$USER /var/www/yourdomin.com/html 
+
+sudo chmod -R 755 /var/www
+
+#  Create Demo Pages for Each Virtual Host
+
+sudo nano /var/www/yourdomin.com/html/index.html 
+
+# Create New Virtual Host Files
+
+sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/yourdomin.com.conf 
+
+# Open the new file in your editor with root privileges
+
+
+<VirtualHost *:80>
+    ServerAdmin admin@test.com
+    ServerName yourdomin.com
+    ServerAlias www.yourdomin.com
+    DocumentRoot /var/www/yourdomin.com/html
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+# Enable the New Virtual Host Files
+
+# We can use the a2ensite tool to enable each of our sites like this
+
+sudo a2ensite yourdomin.com.conf
+
+# Next, disable the default site defined in 000-default.conf
+
+ sudo a2dissite 000-default.conf
+
+# In other documentation, you may also see an example using the service command
+
+ sudo service apache2 restart
+
+# When you are finished, you need to restart Apache to make these changes take effect
+
+ sudo systemctl restart apache2
+
+# Visit your domin 
+
+ yourdomin.com
+
+
+
+
+
 
