@@ -1,0 +1,4 @@
+zone "example.com" {
+        type master;
+        file "/var/lib/bind/example.com.hosts";
+        };

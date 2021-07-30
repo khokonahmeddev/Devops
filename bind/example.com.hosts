@@ -1,0 +1,19 @@
+$ttl 38400
+example.com.  IN      SOA     example.com. username.example.com. (
+                        1587991136
+                        10800
+                        3600
+                        604800
+                        38400 )
+example.com.  IN      NS      example.com.
+example.com.  IN      NS      ns1.example.com.
+example.com.  IN      NS      ns2.example.com.
+example.com.  IN      A       your_ip
+www.example.com.      IN      A       your_ip
+mail.example.com.     IN      A       your_ip
+ftp.example.com.      IN      A       your_ip
+ns1.example.com.      IN      A       your_ip
+ns2.example.com.      IN      A       your_ip
+example.com.  IN      MX      10 mail.example.com.
+example.com.  IN      TXT     "someValue"
+sub.example.com.     IN      TXT     "someValue"
