@@ -10,11 +10,11 @@
 
 ### [Git Install](/git-install)
 
-### [Laravel Supervisor && Configuration](/laravel)
+### [Laravel Supervisor & Configuration](/laravel)
 
 ### [Php & phpmyadmin Install](/php-myadmin)
 
-### [Pm2 install && Configuration](/pm2)
+### [Pm2 install & Configuration](/pm2)
 
 ### [Systemd Service Configuration](/systemd)
 
