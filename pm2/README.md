@@ -33,7 +33,12 @@
 
 ### Package.json add in scripts section
 
+ ### Project one
+
 `"project1": "HOST=localhost PORT=3001 node .output/server/index.mjs"`
+
+### project two
+
 `"project2": "HOST=localhost PORT=3002 node .output/server/index.mjs"`
 
 
