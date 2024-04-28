@@ -16,6 +16,8 @@
 
 ### [Pm2 install & Configuration](/pm2)
 
+### [Pm2 install & Configuration](/nuxtjs)
+
 ### [Systemd Service Configuration](/systemd)
 
 ### [UFW Configuration](/ufw)
