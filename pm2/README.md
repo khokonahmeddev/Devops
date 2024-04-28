@@ -15,14 +15,38 @@
 `pm2 list`
 
 
+### Restart pm2 server
+
+`pm2 restart myapp`
+
+
+### Stop pm2 my app
+
+`pm2 stop myapp`
+
+### Delete pm2 my app
+
+`pm2 delete myapp`
+
 
 #### NUXT js 
+
+### Package.json add in scripts section
+
+`"project1": "HOST=localhost PORT=3001 node .output/server/index.mjs"`
+`"project2": "HOST=localhost PORT=3002 node .output/server/index.mjs"`
+
+
+### Sinle nuxt project 
 
 ### Your project folder run this command
 
 `pm2 start npm -- start`
 
+### Multiple nuxt project run
 
-### Restart pm2 server
+### Your project folder run this command
 
-`pm2 restart myapp`
+`pm2 start nuxt_ecosystem.config.js`
+
+
