@@ -37,7 +37,7 @@
 
 `"project1": "HOST=localhost PORT=3001 node .output/server/index.mjs"`
 
-### project two
+### Project two
 
 `"project2": "HOST=localhost PORT=3002 node .output/server/index.mjs"`
 
